@@ -14,6 +14,6 @@ RUN pip install --no-cache-dir jupyter numpy matplotlib yfinance scipy
 EXPOSE 8000
 
 # Run app.py when the container launches
-CMD ["jupyter", "notebook", "--ip=8.8.8.8", "--port=8888", "--allow-root", "--no-browser"]
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser"]
 
 # CMD ["python", "app.py"]

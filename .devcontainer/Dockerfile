@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir jupyter numpy matplotlib yfinance scipy
+RUN pip install --no-cache-dir jupyter numpy matplotlib yfinance scipy seaborn
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000

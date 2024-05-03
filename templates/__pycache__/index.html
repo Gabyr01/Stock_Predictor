@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Predictor</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #header {
+            margin-bottom: 20px;
+        }
+        #stock-image {
+            width: 200px; 
+            height: auto;
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <img src="stock_arrows.png" alt="Stock image" id="stock-image">
+            <h1>Stock Checker</h1>
+        </div>
+        <form action="/stock" method="post">
+            <label for="ticker">Enter Ticker Symbol:</label><br>
+            <input type="text" id="ticker" name="ticker"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        {% if initial_portfolio_value is defined %}
+            <p>Initial portfolio value: ${{ initial_portfolio_value }}</p>
+        {% endif %}
+        {% if mean_portfolio_value is defined %}
+            <p>Mean final portfolio value for {{ ticker }}: ${{ "%.2f"|format(mean_portfolio_value) }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

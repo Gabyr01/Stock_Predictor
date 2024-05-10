@@ -17,6 +17,7 @@
             ]
         }
     },
-    "postCreateCommand": "echo 'Container ready!'"
+    "postCreateCommand": "touch /workspace/test_command_execution.txt"
+    // "postCreateCommand": "echo 'Container ready!'"
 
   }
